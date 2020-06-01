@@ -24,16 +24,16 @@ public class PhoneNumberService {
 		keypad.put(0, new Character[]{'0'});
 		keypad.put(1, new Character[]{'1'});
 		keypad.put(2, new Character[]{'a','b', 'c'});
-        keypad.put(3, new Character[]{'d','e', 'f'});
-        keypad.put(4, new Character[]{'g','h', 'i'});
-        keypad.put(5, new Character[]{'j','k', 'l'});
-        keypad.put(6, new Character[]{'m','n', 'o'});
-        keypad.put(7, new Character[]{'p','q', 'r', 's'});
-        keypad.put(8, new Character[]{'t','u', 'v'});
-        keypad.put(9, new Character[]{'w','x', 'y', 'z'});
+        	keypad.put(3, new Character[]{'d','e', 'f'});
+        	keypad.put(4, new Character[]{'g','h', 'i'});
+        	keypad.put(5, new Character[]{'j','k', 'l'});
+       		keypad.put(6, new Character[]{'m','n', 'o'});
+       	 	keypad.put(7, new Character[]{'p','q', 'r', 's'});
+        	keypad.put(8, new Character[]{'t','u', 'v'});
+        	keypad.put(9, new Character[]{'w','x', 'y', 'z'});
 
-        List<String> resultList = new LinkedList<String>();
-        String  temp = "";
+        	List<String> resultList = new LinkedList<String>();
+        	String  temp = "";
 		PhoneNumberCombination(0,keypad,resultList,number, temp);
 		long totalOfComb = resultList.size();
 		long TotalPage = totalOfComb/pageSize;
