@@ -1,0 +1,27 @@
+  <label>Input:</label>
+  <form [formGroup]="phoneNumberForm">
+    <input formControlName="phoneNumber" [(ngModel)]="number">
+  </form>
+  <button (click)="getResult()" [disabled]="phoneNumber.invalid">GO</button>
+
+  <div *ngIf="phoneNumber.errors" [ngClass] = "'error'">
+    <div *ngIf="phoneNumber.errors.minlength">
+      Name must be at least 5 characters long.
+    </div>
+    <div *ngIf="phoneNumber.errors.maxlength">
+      Name can be max 10 characters long.
+    </div>
+  </div>
+
+  <table *ngIf="result">
+    <thead>Current Page: <strong>{{result.page}}</strong>  with <strong>{{result.data.length}}</strong>  records</thead>
+    <tr *ngFor="let data of result.data; index as i">
+      <td>{{i}}</td>
+      <td>{{data}}</td>
+    </tr>
+    <tfoot> Total: <strong>{{result.totalRecords}}</strong> Records in <strong>{{result.totalPage}}</strong> Pages</tfoot>
+  </table>
+  <div *ngIf="result">
+    <button (click)="prev()">Prev</button>
+    <button (click)="next()">Next</button>
+  </div>
